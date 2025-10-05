@@ -5,6 +5,7 @@ from tqdm import tqdm
 import uuid
 import psutil
 import os
+from database import create_tables
 
 BASE_URL = "http://localhost:8081/order"
 
@@ -33,7 +34,7 @@ def place_order(item, qty, results, idx, delay):
         with open(report_file_name, 'a') as f1:
             f1.write(f'Delay : {delay}, '
                      f'Total Response Took: {round((t2-t1), 3)}, '
-                     f'Status: {res["final_status"]}, '
+                     f'Status: {res.get("final_status")}, '
                      f'Payload: {payload_size} bytes, '
                      f'CPU time: {round(cpu_used, 5)} \n')
 
@@ -46,9 +47,12 @@ def run_experiment_parallel_order(trials=5, concurrent_orders=100):
     failure_count = 0
 
     # clear previous orders/stocks for clean trial run
-    requests.post(f"http://localhost:8081/clear_orders", json={})
-    requests.post(f"http://localhost:8082/clear_stocks", json={})
-    input('Check DB state is clean, press any key to continue ...')
+    requests.post(f"http://localhost:8081/clear_orders")
+    requests.post(f"http://localhost:8082/clear_stocks")
+    requests.post(f"http://localhost:8083/clear_payments")
+    requests.post(f"http://localhost:8084/clear_tracking")
+    
+    print('DB state is clean, press any key to continue ...')
 
     for t in range(trials):
         print(f"Trial {t+1}/{trials}")
@@ -92,9 +96,11 @@ def run_experiment_sequential_order(trials=5, total_orders=100):
     failure_count = 0
 
     # clear previous orders/stocks for clean trial run
-    requests.post(f"http://localhost:8081/clear_orders", json={})
-    requests.post(f"http://localhost:8082/clear_stocks", json={})
-    input('Check DB state is clean, press any key to continue ...')
+    requests.post(f"http://localhost:8081/clear_orders")
+    requests.post(f"http://localhost:8082/clear_stocks")
+    requests.post(f"http://localhost:8083/clear_payments")
+    requests.post(f"http://localhost:8084/clear_tracking")
+    print('DB state is clean, press any key to continue ...')
 
     for t in range(trials):
         print(f"Trial {t+1}/{trials}")
@@ -110,7 +116,7 @@ def run_experiment_sequential_order(trials=5, total_orders=100):
 
         # Check DB for consistency
         try:
-            inv = requests.get("http://localhost:8082/debug_stock?item=a").json()
+            inv = requests.get(f"http://localhost:8082/debug_stock?item={random_item_name}").json()
             stock_left = inv["stock"]
             total_completed_orders = sum(1 for r in results.values() if r.get("final_status") == "COMPLETED")
             print(f'Stock Left: {stock_left}, Total Completed Orders: {total_completed_orders}')
@@ -128,6 +134,7 @@ def run_experiment_sequential_order(trials=5, total_orders=100):
 
 
 if __name__ == "__main__":
+    create_tables()
     delay = 1
     # report_file_name = 'ms_sc1_sequential.txt'
     report_file_name = 'ms_sc1_parallel.txt'
@@ -144,3 +151,4 @@ if __name__ == "__main__":
 
     with open(report_file_name, 'a') as f:
         f.write(f'\n\n Success: {success}, Failure: {failure}, Success rate: {success / (success + failure)}')
+
