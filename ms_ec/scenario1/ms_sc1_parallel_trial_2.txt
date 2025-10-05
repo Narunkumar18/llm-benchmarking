@@ -1,0 +1,75 @@
+{
+  "scenario": "parallel",
+  "total_time": 10.298763990402222,
+  "total_orders": 5,
+  "average_response_time": 6.1756,
+  "average_cpu_time": 0.004938,
+  "average_payload_size": 346.0,
+  "orders": [
+    {
+      "order_result": {
+        "order_id": "3d73221f-5094-45df-bded-21d34d59051a",
+        "final_status": "COMPLETED",
+        "reservation_id": "8d746a22-97d4-4d72-811a-e3874d3e1d48",
+        "payment_id": "128c6b7a-2d4a-4787-8a55-376f75d41280"
+      },
+      "metrics": {
+        "response_time": 4.119,
+        "cpu_time": 0.00454,
+        "payload_size": 346
+      }
+    },
+    {
+      "order_result": {
+        "order_id": "1aa699cd-919d-4246-900a-3bc135821c90",
+        "final_status": "COMPLETED",
+        "reservation_id": "162ab62d-46bf-4d50-a85c-ee9b580cca53",
+        "payment_id": "2706b935-519b-44f6-b6b1-3ea27fca4e4d"
+      },
+      "metrics": {
+        "response_time": 8.227,
+        "cpu_time": 0.00606,
+        "payload_size": 346
+      }
+    },
+    {
+      "order_result": {
+        "order_id": "aeed7c9e-0e99-4972-8362-c3f662962549",
+        "final_status": "COMPLETED",
+        "reservation_id": "f9a6941d-2752-4c5f-9538-5413fe90bfa1",
+        "payment_id": "6cc1ba15-fbca-4996-a286-973e9f04468e"
+      },
+      "metrics": {
+        "response_time": 2.067,
+        "cpu_time": 0.00329,
+        "payload_size": 346
+      }
+    },
+    {
+      "order_result": {
+        "order_id": "05e6b791-f806-4bc6-aec7-10a758c33366",
+        "final_status": "COMPLETED",
+        "reservation_id": "5852c5f8-b22f-47db-91ce-d599d200ee2a",
+        "payment_id": "acd6e067-1c12-469a-b2c1-7f95bb606244"
+      },
+      "metrics": {
+        "response_time": 6.168,
+        "cpu_time": 0.00452,
+        "payload_size": 346
+      }
+    },
+    {
+      "order_result": {
+        "order_id": "a1a3ad6d-1922-4d9b-9f93-f570dad40049",
+        "final_status": "COMPLETED",
+        "reservation_id": "9b6c8553-3bfd-4a09-91ac-e6781550a6f1",
+        "payment_id": "9583a135-ae52-48c3-99cc-17a7068818ad"
+      },
+      "metrics": {
+        "response_time": 10.297,
+        "cpu_time": 0.00628,
+        "payload_size": 346
+      }
+    }
+  ]
+}

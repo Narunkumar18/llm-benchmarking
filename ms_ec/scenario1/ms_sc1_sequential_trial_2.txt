@@ -1,0 +1,75 @@
+{
+  "scenario": "sequential",
+  "total_time": 10.233668088912964,
+  "total_orders": 5,
+  "average_response_time": 2.0463999999999998,
+  "average_cpu_time": 0.0017360000000000001,
+  "average_payload_size": 346.0,
+  "orders": [
+    {
+      "order_result": {
+        "order_id": "a18b4f1d-b1c8-4126-8cb3-dfdbc4a3aee2",
+        "final_status": "COMPLETED",
+        "reservation_id": "3c58792e-a67d-4910-82b9-8df606323382",
+        "payment_id": "a4ed4720-f8e8-43f6-81cf-10562e09667e"
+      },
+      "metrics": {
+        "response_time": 2.033,
+        "cpu_time": 0.00122,
+        "payload_size": 346
+      }
+    },
+    {
+      "order_result": {
+        "order_id": "23cbd210-4d40-4b73-be1c-6958bebaedbd",
+        "final_status": "COMPLETED",
+        "reservation_id": "d3deb06e-36dc-408d-9794-156151d4efde",
+        "payment_id": "98bf2125-2d16-451b-b1c5-fc648a176fa3"
+      },
+      "metrics": {
+        "response_time": 2.041,
+        "cpu_time": 0.00096,
+        "payload_size": 346
+      }
+    },
+    {
+      "order_result": {
+        "order_id": "83593a1a-0d6c-4667-adb3-5ef20fd22547",
+        "final_status": "COMPLETED",
+        "reservation_id": "2650ef36-ccba-4297-8836-b05556281ff0",
+        "payment_id": "44a162f0-d1f6-420c-9d3d-aabe681cfbad"
+      },
+      "metrics": {
+        "response_time": 2.059,
+        "cpu_time": 0.00133,
+        "payload_size": 346
+      }
+    },
+    {
+      "order_result": {
+        "order_id": "a0a78b60-c1c7-4124-8cf9-d9dc7fc460c8",
+        "final_status": "COMPLETED",
+        "reservation_id": "2ecbe50c-01d0-4725-9f43-bb97558bfcb1",
+        "payment_id": "b3feba22-f0f3-4551-9834-43cab32e92e7"
+      },
+      "metrics": {
+        "response_time": 2.04,
+        "cpu_time": 0.00298,
+        "payload_size": 346
+      }
+    },
+    {
+      "order_result": {
+        "order_id": "8e069dd6-6d1b-43a9-a154-2594a66b9ca6",
+        "final_status": "COMPLETED",
+        "reservation_id": "263ba367-4586-401c-be58-a00dc5b4c8bd",
+        "payment_id": "b8b01c16-0109-4445-bc45-de9d93e6202f"
+      },
+      "metrics": {
+        "response_time": 2.059,
+        "cpu_time": 0.00219,
+        "payload_size": 346
+      }
+    }
+  ]
+}

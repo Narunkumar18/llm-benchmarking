@@ -1,0 +1,74 @@
+{
+  "scenario": "parallel",
+  "total_time": 10.271827936172485,
+  "total_orders": 5,
+  "average_response_time": 6.1668,
+  "average_cpu_time": 0.004778,
+  "average_payload_size": 336.6,
+  "orders": [
+    {
+      "order_result": {
+        "order_id": "e8798c18-4f99-4e62-b65e-fa5b1e766541",
+        "final_status": "COMPLETED",
+        "reservation_id": "9099aeb0-7ac0-402d-a8fa-14b4e24bfb1c",
+        "payment_id": "d5dd0d95-b5da-4256-ac5c-dc2dc174d7bc"
+      },
+      "metrics": {
+        "response_time": 2.059,
+        "cpu_time": 0.00374,
+        "payload_size": 346
+      }
+    },
+    {
+      "order_result": {
+        "order_id": "65594af1-50f2-4c2a-be39-6ec6c13c5c7d",
+        "final_status": "COMPLETED",
+        "reservation_id": "d1a44474-ff96-46a6-be4b-aa5c0cf2e1cb",
+        "payment_id": "ee9b54e9-3a5b-40d2-ab3c-d9ce250d0efc"
+      },
+      "metrics": {
+        "response_time": 6.175,
+        "cpu_time": 0.00538,
+        "payload_size": 346
+      }
+    },
+    {
+      "order_result": {
+        "order_id": "cf56736e-fb63-489b-b7df-d6dc553ab617",
+        "final_status": "PAYMENT_FAILED",
+        "reservation_id": "6a39359c-0f42-443b-8b8a-8fb380c00cf9"
+      },
+      "metrics": {
+        "response_time": 4.108,
+        "cpu_time": 0.0042,
+        "payload_size": 299
+      }
+    },
+    {
+      "order_result": {
+        "order_id": "44840ee2-df10-4975-92fe-705e1772492f",
+        "final_status": "COMPLETED",
+        "reservation_id": "03d02ccd-a352-4d12-8be9-4f2217767081",
+        "payment_id": "f53f3a5a-bf1a-43bf-8ce3-bd4eda6c0f7b"
+      },
+      "metrics": {
+        "response_time": 10.27,
+        "cpu_time": 0.00602,
+        "payload_size": 346
+      }
+    },
+    {
+      "order_result": {
+        "order_id": "a63120cf-4497-447d-ac3a-bba1dc28b30f",
+        "final_status": "COMPLETED",
+        "reservation_id": "53d5360e-fee9-4850-a1d8-515c44402f5c",
+        "payment_id": "15db80ac-208d-49ec-9465-8d4af3aefb1b"
+      },
+      "metrics": {
+        "response_time": 8.222,
+        "cpu_time": 0.00455,
+        "payload_size": 346
+      }
+    }
+  ]
+}

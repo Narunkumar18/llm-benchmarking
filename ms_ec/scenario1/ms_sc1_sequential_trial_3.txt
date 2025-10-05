@@ -1,0 +1,75 @@
+{
+  "scenario": "sequential",
+  "total_time": 10.322534799575806,
+  "total_orders": 5,
+  "average_response_time": 2.0642,
+  "average_cpu_time": 0.0016980000000000003,
+  "average_payload_size": 346.0,
+  "orders": [
+    {
+      "order_result": {
+        "order_id": "f5b8c887-f9be-4cf6-b035-ca7942d4e562",
+        "final_status": "COMPLETED",
+        "reservation_id": "0b0af1ab-554e-420f-aaac-ff0e49cd56ed",
+        "payment_id": "7770c5e4-3adc-4c58-9554-91a84fdf2f6a"
+      },
+      "metrics": {
+        "response_time": 2.049,
+        "cpu_time": 0.00143,
+        "payload_size": 346
+      }
+    },
+    {
+      "order_result": {
+        "order_id": "a39df398-9146-4243-b6b8-0fd5f2655732",
+        "final_status": "COMPLETED",
+        "reservation_id": "6f4bfce6-f7a6-4d04-b6f3-e382c5803d1a",
+        "payment_id": "eef6cba0-bad2-428b-8d6d-42e1d013917b"
+      },
+      "metrics": {
+        "response_time": 2.069,
+        "cpu_time": 0.00198,
+        "payload_size": 346
+      }
+    },
+    {
+      "order_result": {
+        "order_id": "5e4137b6-191c-4e52-a005-7c4e29052473",
+        "final_status": "COMPLETED",
+        "reservation_id": "cdccbd9b-d712-475e-8dbe-e4f1c3b685e4",
+        "payment_id": "de7010dd-605d-4a20-aa65-360691c6275c"
+      },
+      "metrics": {
+        "response_time": 2.067,
+        "cpu_time": 0.00165,
+        "payload_size": 346
+      }
+    },
+    {
+      "order_result": {
+        "order_id": "6e5f1f9c-a3d5-4fa0-9491-2d13365d48aa",
+        "final_status": "COMPLETED",
+        "reservation_id": "d80f0769-f31c-4ff7-8e43-3d31994e7756",
+        "payment_id": "5190323f-d1db-4422-8512-e9b72b59256d"
+      },
+      "metrics": {
+        "response_time": 2.069,
+        "cpu_time": 0.00168,
+        "payload_size": 346
+      }
+    },
+    {
+      "order_result": {
+        "order_id": "69a06c71-6b96-4fd5-9dd1-c4614b68f6ec",
+        "final_status": "COMPLETED",
+        "reservation_id": "d82b048c-3885-484b-9170-3bae8138ceb9",
+        "payment_id": "d2288cf4-de15-4229-832c-ceec5fd1f311"
+      },
+      "metrics": {
+        "response_time": 2.067,
+        "cpu_time": 0.00175,
+        "payload_size": 346
+      }
+    }
+  ]
+}

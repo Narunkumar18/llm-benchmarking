@@ -1,0 +1,75 @@
+{
+  "scenario": "sequential",
+  "total_time": 10.294028997421265,
+  "total_orders": 5,
+  "average_response_time": 2.0585999999999998,
+  "average_cpu_time": 0.001444,
+  "average_payload_size": 346.0,
+  "orders": [
+    {
+      "order_result": {
+        "order_id": "b842220b-cb00-46ac-bd46-65280570987f",
+        "final_status": "COMPLETED",
+        "reservation_id": "dd63d8a9-6c15-467b-89d1-c3acfe0cf252",
+        "payment_id": "02c7f62e-f4bf-48b8-90c8-584d05aa8f3a"
+      },
+      "metrics": {
+        "response_time": 2.059,
+        "cpu_time": 0.00129,
+        "payload_size": 346
+      }
+    },
+    {
+      "order_result": {
+        "order_id": "d5081613-e128-4e2a-8283-bff91bf65a3f",
+        "final_status": "COMPLETED",
+        "reservation_id": "2d846036-f7ce-4543-9996-f8a157e41c27",
+        "payment_id": "b7850819-1b95-45dc-b9bf-7dc6a253e7ff"
+      },
+      "metrics": {
+        "response_time": 2.055,
+        "cpu_time": 0.00125,
+        "payload_size": 346
+      }
+    },
+    {
+      "order_result": {
+        "order_id": "a65f7d0a-b0da-4026-941f-b1d7540957e4",
+        "final_status": "COMPLETED",
+        "reservation_id": "5c05e05d-39b6-4c1a-b337-e589b31221a7",
+        "payment_id": "25794a37-caaa-4714-90d9-195aa00192c6"
+      },
+      "metrics": {
+        "response_time": 2.062,
+        "cpu_time": 0.0014,
+        "payload_size": 346
+      }
+    },
+    {
+      "order_result": {
+        "order_id": "da48d7c3-e5de-4fc1-9087-ea712daf0c6d",
+        "final_status": "COMPLETED",
+        "reservation_id": "9c047936-3d65-4cbf-92a2-5b70b69b4d50",
+        "payment_id": "e0598645-6931-43fa-9a87-3d4710982b4f"
+      },
+      "metrics": {
+        "response_time": 2.07,
+        "cpu_time": 0.00189,
+        "payload_size": 346
+      }
+    },
+    {
+      "order_result": {
+        "order_id": "a242144b-9675-4400-abce-05ce863efa52",
+        "final_status": "COMPLETED",
+        "reservation_id": "357fdcdc-445e-4669-b1c0-36ed4012d32c",
+        "payment_id": "0db792d0-9c11-4fdf-8330-9ac5e3a7aeee"
+      },
+      "metrics": {
+        "response_time": 2.047,
+        "cpu_time": 0.00139,
+        "payload_size": 346
+      }
+    }
+  ]
+}

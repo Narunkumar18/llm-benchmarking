@@ -1,0 +1,73 @@
+{
+  "scenario": "sequential",
+  "total_time": 10.34847092628479,
+  "total_orders": 5,
+  "average_response_time": 2.0692,
+  "average_cpu_time": 0.001492,
+  "average_payload_size": 327.2,
+  "orders": [
+    {
+      "order_result": {
+        "order_id": "f6a9d758-79f8-4817-951e-e1eb8187435a",
+        "final_status": "PAYMENT_FAILED",
+        "reservation_id": "751fb0c6-0dd2-4ea1-9945-27882f238787"
+      },
+      "metrics": {
+        "response_time": 2.047,
+        "cpu_time": 0.00101,
+        "payload_size": 299
+      }
+    },
+    {
+      "order_result": {
+        "order_id": "fe325b0d-ccfd-4770-b1fc-773a04e19f4b",
+        "final_status": "COMPLETED",
+        "reservation_id": "06d3cad4-a01e-42e8-9476-72ebbc34bb75",
+        "payment_id": "5ed251c2-31fb-44a5-9a72-5f91b7d2b211"
+      },
+      "metrics": {
+        "response_time": 2.09,
+        "cpu_time": 0.00177,
+        "payload_size": 346
+      }
+    },
+    {
+      "order_result": {
+        "order_id": "bbeaf285-5b5b-447b-a7db-8723fef43033",
+        "final_status": "PAYMENT_FAILED",
+        "reservation_id": "57dcabba-90f7-4bb3-a515-71c75b4432e2"
+      },
+      "metrics": {
+        "response_time": 2.067,
+        "cpu_time": 0.0015,
+        "payload_size": 299
+      }
+    },
+    {
+      "order_result": {
+        "order_id": "97b4dda0-81b5-463c-b402-eff9cfebc93d",
+        "final_status": "COMPLETED",
+        "reservation_id": "440175f9-d00e-43b9-9fad-1a58d7ace710",
+        "payment_id": "bae2467e-c5e6-46a1-88dc-5a9d410cc751"
+      },
+      "metrics": {
+        "response_time": 2.072,
+        "cpu_time": 0.00174,
+        "payload_size": 346
+      }
+    },
+    {
+      "order_result": {
+        "order_id": "abb48786-b37a-450f-a027-eba88abe1f58",
+        "final_status": "COMPLETED",
+        "reservation_id": "4a62cd60-ea32-4019-be42-8edd15239790",
+        "payment_id": "93217065-2d24-4189-a969-2ffffebaf7df"
+      },
+      "metrics": {
+        "response_time": 2.07,
+        "cpu_time": 0.00144,
+        "payload_size": 346
+      }
+    }
+  ]
+}

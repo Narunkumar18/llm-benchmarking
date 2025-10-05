@@ -1,0 +1,74 @@
+{
+  "scenario": "sequential",
+  "total_time": 10.351666927337646,
+  "total_orders": 5,
+  "average_response_time": 2.0648,
+  "average_cpu_time": 0.0015379999999999999,
+  "average_payload_size": 336.6,
+  "orders": [
+    {
+      "order_result": {
+        "order_id": "df302e54-4eeb-4508-8207-d7dd53fb47a3",
+        "final_status": "PAYMENT_FAILED",
+        "reservation_id": "1bc19fca-0923-4e8c-90a9-d07c3fd0ab30"
+      },
+      "metrics": {
+        "response_time": 2.11,
+        "cpu_time": 0.00171,
+        "payload_size": 299
+      }
+    },
+    {
+      "order_result": {
+        "order_id": "fde9a80a-44d7-43a2-b532-20bb06ab73fe",
+        "final_status": "COMPLETED",
+        "reservation_id": "ce3dee40-34ac-450a-9df8-05b5836dfeaa",
+        "payment_id": "83e4fb89-9234-4666-b3ed-98f457fd8f13"
+      },
+      "metrics": {
+        "response_time": 2.049,
+        "cpu_time": 0.00142,
+        "payload_size": 346
+      }
+    },
+    {
+      "order_result": {
+        "order_id": "c31a3f5a-ff8a-4503-a5e7-b79c1044b2e1",
+        "final_status": "COMPLETED",
+        "reservation_id": "9ebef485-7660-460b-b164-197e673f357a",
+        "payment_id": "9925e708-5c49-4442-b5e3-2725b9ca6003"
+      },
+      "metrics": {
+        "response_time": 2.058,
+        "cpu_time": 0.00147,
+        "payload_size": 346
+      }
+    },
+    {
+      "order_result": {
+        "order_id": "f2870351-6019-4c09-b98e-a8c9bad49588",
+        "final_status": "COMPLETED",
+        "reservation_id": "3ea85642-21e4-4089-8cdb-674b88099d98",
+        "payment_id": "c8b933a5-fa84-4aaf-b2a7-1b5263ac9ba0"
+      },
+      "metrics": {
+        "response_time": 2.044,
+        "cpu_time": 0.00128,
+        "payload_size": 346
+      }
+    },
+    {
+      "order_result": {
+        "order_id": "c7d4cd11-c1b9-449b-b1d6-5cd0098e99d6",
+        "final_status": "COMPLETED",
+        "reservation_id": "4bffb6bf-1b69-49f5-a05e-e15cddaa8097",
+        "payment_id": "7fb24fc7-c61d-42a9-a0f3-3f8cbafae755"
+      },
+      "metrics": {
+        "response_time": 2.063,
+        "cpu_time": 0.00181,
+        "payload_size": 346
+      }
+    }
+  ]
+}
