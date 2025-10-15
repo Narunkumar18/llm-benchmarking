@@ -3,9 +3,9 @@
 import grpc
 import warnings
 
-import ms_ec.scenario3.proto.retail_pb2 as retail__pb2
+from . import retail_pb2 as retail__pb2
 
-GRPC_GENERATED_VERSION = '1.74.0'
+GRPC_GENERATED_VERSION = '1.75.1'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
@@ -25,8 +25,11 @@ if _version_not_supported:
     )
 
 
-class InventoryStub(object):
-    """Missing associated documentation comment in .proto file."""
+class InventoryServiceStub(object):
+    """========================================
+    Inventory Service
+    ========================================
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -34,44 +37,113 @@ class InventoryStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.Reserve = channel.unary_unary(
-                '/retail.Inventory/Reserve',
-                request_serializer=retail__pb2.ReserveRequest.SerializeToString,
-                response_deserializer=retail__pb2.ReserveResponse.FromString,
+        self.CheckStock = channel.unary_unary(
+                '/retail.InventoryService/CheckStock',
+                request_serializer=retail__pb2.CheckStockRequest.SerializeToString,
+                response_deserializer=retail__pb2.CheckStockResponse.FromString,
+                _registered_method=True)
+        self.ReserveStock = channel.unary_unary(
+                '/retail.InventoryService/ReserveStock',
+                request_serializer=retail__pb2.ReserveStockRequest.SerializeToString,
+                response_deserializer=retail__pb2.ReserveStockResponse.FromString,
+                _registered_method=True)
+        self.ReleaseStock = channel.unary_unary(
+                '/retail.InventoryService/ReleaseStock',
+                request_serializer=retail__pb2.ReleaseStockRequest.SerializeToString,
+                response_deserializer=retail__pb2.ReleaseStockResponse.FromString,
+                _registered_method=True)
+        self.InitializeStock = channel.unary_unary(
+                '/retail.InventoryService/InitializeStock',
+                request_serializer=retail__pb2.InitializeStockRequest.SerializeToString,
+                response_deserializer=retail__pb2.InitializeStockResponse.FromString,
+                _registered_method=True)
+        self.ClearInventory = channel.unary_unary(
+                '/retail.InventoryService/ClearInventory',
+                request_serializer=retail__pb2.Empty.SerializeToString,
+                response_deserializer=retail__pb2.Empty.FromString,
                 _registered_method=True)
 
 
-class InventoryServicer(object):
-    """Missing associated documentation comment in .proto file."""
+class InventoryServiceServicer(object):
+    """========================================
+    Inventory Service
+    ========================================
+    """
 
-    def Reserve(self, request, context):
-        """Reserve items synchronously (server will sleep to simulate delay)
-        """
+    def CheckStock(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ReserveStock(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ReleaseStock(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def InitializeStock(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ClearInventory(self, request, context):
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
 
-def add_InventoryServicer_to_server(servicer, server):
+def add_InventoryServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'Reserve': grpc.unary_unary_rpc_method_handler(
-                    servicer.Reserve,
-                    request_deserializer=retail__pb2.ReserveRequest.FromString,
-                    response_serializer=retail__pb2.ReserveResponse.SerializeToString,
+            'CheckStock': grpc.unary_unary_rpc_method_handler(
+                    servicer.CheckStock,
+                    request_deserializer=retail__pb2.CheckStockRequest.FromString,
+                    response_serializer=retail__pb2.CheckStockResponse.SerializeToString,
+            ),
+            'ReserveStock': grpc.unary_unary_rpc_method_handler(
+                    servicer.ReserveStock,
+                    request_deserializer=retail__pb2.ReserveStockRequest.FromString,
+                    response_serializer=retail__pb2.ReserveStockResponse.SerializeToString,
+            ),
+            'ReleaseStock': grpc.unary_unary_rpc_method_handler(
+                    servicer.ReleaseStock,
+                    request_deserializer=retail__pb2.ReleaseStockRequest.FromString,
+                    response_serializer=retail__pb2.ReleaseStockResponse.SerializeToString,
+            ),
+            'InitializeStock': grpc.unary_unary_rpc_method_handler(
+                    servicer.InitializeStock,
+                    request_deserializer=retail__pb2.InitializeStockRequest.FromString,
+                    response_serializer=retail__pb2.InitializeStockResponse.SerializeToString,
+            ),
+            'ClearInventory': grpc.unary_unary_rpc_method_handler(
+                    servicer.ClearInventory,
+                    request_deserializer=retail__pb2.Empty.FromString,
+                    response_serializer=retail__pb2.Empty.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'retail.Inventory', rpc_method_handlers)
+            'retail.InventoryService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('retail.Inventory', rpc_method_handlers)
+    server.add_registered_method_handlers('retail.InventoryService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
-class Inventory(object):
-    """Missing associated documentation comment in .proto file."""
+class InventoryService(object):
+    """========================================
+    Inventory Service
+    ========================================
+    """
 
     @staticmethod
-    def Reserve(request,
+    def CheckStock(request,
             target,
             options=(),
             channel_credentials=None,
@@ -84,9 +156,661 @@ class Inventory(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/retail.Inventory/Reserve',
-            retail__pb2.ReserveRequest.SerializeToString,
-            retail__pb2.ReserveResponse.FromString,
+            '/retail.InventoryService/CheckStock',
+            retail__pb2.CheckStockRequest.SerializeToString,
+            retail__pb2.CheckStockResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ReserveStock(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/retail.InventoryService/ReserveStock',
+            retail__pb2.ReserveStockRequest.SerializeToString,
+            retail__pb2.ReserveStockResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ReleaseStock(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/retail.InventoryService/ReleaseStock',
+            retail__pb2.ReleaseStockRequest.SerializeToString,
+            retail__pb2.ReleaseStockResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def InitializeStock(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/retail.InventoryService/InitializeStock',
+            retail__pb2.InitializeStockRequest.SerializeToString,
+            retail__pb2.InitializeStockResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ClearInventory(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/retail.InventoryService/ClearInventory',
+            retail__pb2.Empty.SerializeToString,
+            retail__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+
+class PaymentServiceStub(object):
+    """========================================
+    Payment Service
+    ========================================
+    """
+
+    def __init__(self, channel):
+        """Constructor.
+
+        Args:
+            channel: A grpc.Channel.
+        """
+        self.ProcessPayment = channel.unary_unary(
+                '/retail.PaymentService/ProcessPayment',
+                request_serializer=retail__pb2.ProcessPaymentRequest.SerializeToString,
+                response_deserializer=retail__pb2.ProcessPaymentResponse.FromString,
+                _registered_method=True)
+        self.GetPaymentStatus = channel.unary_unary(
+                '/retail.PaymentService/GetPaymentStatus',
+                request_serializer=retail__pb2.GetPaymentStatusRequest.SerializeToString,
+                response_deserializer=retail__pb2.GetPaymentStatusResponse.FromString,
+                _registered_method=True)
+        self.ClearPayments = channel.unary_unary(
+                '/retail.PaymentService/ClearPayments',
+                request_serializer=retail__pb2.Empty.SerializeToString,
+                response_deserializer=retail__pb2.Empty.FromString,
+                _registered_method=True)
+
+
+class PaymentServiceServicer(object):
+    """========================================
+    Payment Service
+    ========================================
+    """
+
+    def ProcessPayment(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetPaymentStatus(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ClearPayments(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+
+def add_PaymentServiceServicer_to_server(servicer, server):
+    rpc_method_handlers = {
+            'ProcessPayment': grpc.unary_unary_rpc_method_handler(
+                    servicer.ProcessPayment,
+                    request_deserializer=retail__pb2.ProcessPaymentRequest.FromString,
+                    response_serializer=retail__pb2.ProcessPaymentResponse.SerializeToString,
+            ),
+            'GetPaymentStatus': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetPaymentStatus,
+                    request_deserializer=retail__pb2.GetPaymentStatusRequest.FromString,
+                    response_serializer=retail__pb2.GetPaymentStatusResponse.SerializeToString,
+            ),
+            'ClearPayments': grpc.unary_unary_rpc_method_handler(
+                    servicer.ClearPayments,
+                    request_deserializer=retail__pb2.Empty.FromString,
+                    response_serializer=retail__pb2.Empty.SerializeToString,
+            ),
+    }
+    generic_handler = grpc.method_handlers_generic_handler(
+            'retail.PaymentService', rpc_method_handlers)
+    server.add_generic_rpc_handlers((generic_handler,))
+    server.add_registered_method_handlers('retail.PaymentService', rpc_method_handlers)
+
+
+ # This class is part of an EXPERIMENTAL API.
+class PaymentService(object):
+    """========================================
+    Payment Service
+    ========================================
+    """
+
+    @staticmethod
+    def ProcessPayment(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/retail.PaymentService/ProcessPayment',
+            retail__pb2.ProcessPaymentRequest.SerializeToString,
+            retail__pb2.ProcessPaymentResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetPaymentStatus(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/retail.PaymentService/GetPaymentStatus',
+            retail__pb2.GetPaymentStatusRequest.SerializeToString,
+            retail__pb2.GetPaymentStatusResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ClearPayments(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/retail.PaymentService/ClearPayments',
+            retail__pb2.Empty.SerializeToString,
+            retail__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+
+class TrackingServiceStub(object):
+    """========================================
+    Tracking Service
+    ========================================
+    """
+
+    def __init__(self, channel):
+        """Constructor.
+
+        Args:
+            channel: A grpc.Channel.
+        """
+        self.InitiateTracking = channel.unary_unary(
+                '/retail.TrackingService/InitiateTracking',
+                request_serializer=retail__pb2.InitiateTrackingRequest.SerializeToString,
+                response_deserializer=retail__pb2.InitiateTrackingResponse.FromString,
+                _registered_method=True)
+        self.UpdateTrackingStatus = channel.unary_unary(
+                '/retail.TrackingService/UpdateTrackingStatus',
+                request_serializer=retail__pb2.UpdateTrackingStatusRequest.SerializeToString,
+                response_deserializer=retail__pb2.UpdateTrackingStatusResponse.FromString,
+                _registered_method=True)
+        self.GetTrackingStatus = channel.unary_unary(
+                '/retail.TrackingService/GetTrackingStatus',
+                request_serializer=retail__pb2.GetTrackingStatusRequest.SerializeToString,
+                response_deserializer=retail__pb2.GetTrackingStatusResponse.FromString,
+                _registered_method=True)
+        self.ClearTracking = channel.unary_unary(
+                '/retail.TrackingService/ClearTracking',
+                request_serializer=retail__pb2.Empty.SerializeToString,
+                response_deserializer=retail__pb2.Empty.FromString,
+                _registered_method=True)
+
+
+class TrackingServiceServicer(object):
+    """========================================
+    Tracking Service
+    ========================================
+    """
+
+    def InitiateTracking(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateTrackingStatus(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetTrackingStatus(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ClearTracking(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+
+def add_TrackingServiceServicer_to_server(servicer, server):
+    rpc_method_handlers = {
+            'InitiateTracking': grpc.unary_unary_rpc_method_handler(
+                    servicer.InitiateTracking,
+                    request_deserializer=retail__pb2.InitiateTrackingRequest.FromString,
+                    response_serializer=retail__pb2.InitiateTrackingResponse.SerializeToString,
+            ),
+            'UpdateTrackingStatus': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateTrackingStatus,
+                    request_deserializer=retail__pb2.UpdateTrackingStatusRequest.FromString,
+                    response_serializer=retail__pb2.UpdateTrackingStatusResponse.SerializeToString,
+            ),
+            'GetTrackingStatus': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetTrackingStatus,
+                    request_deserializer=retail__pb2.GetTrackingStatusRequest.FromString,
+                    response_serializer=retail__pb2.GetTrackingStatusResponse.SerializeToString,
+            ),
+            'ClearTracking': grpc.unary_unary_rpc_method_handler(
+                    servicer.ClearTracking,
+                    request_deserializer=retail__pb2.Empty.FromString,
+                    response_serializer=retail__pb2.Empty.SerializeToString,
+            ),
+    }
+    generic_handler = grpc.method_handlers_generic_handler(
+            'retail.TrackingService', rpc_method_handlers)
+    server.add_generic_rpc_handlers((generic_handler,))
+    server.add_registered_method_handlers('retail.TrackingService', rpc_method_handlers)
+
+
+ # This class is part of an EXPERIMENTAL API.
+class TrackingService(object):
+    """========================================
+    Tracking Service
+    ========================================
+    """
+
+    @staticmethod
+    def InitiateTracking(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/retail.TrackingService/InitiateTracking',
+            retail__pb2.InitiateTrackingRequest.SerializeToString,
+            retail__pb2.InitiateTrackingResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateTrackingStatus(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/retail.TrackingService/UpdateTrackingStatus',
+            retail__pb2.UpdateTrackingStatusRequest.SerializeToString,
+            retail__pb2.UpdateTrackingStatusResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetTrackingStatus(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/retail.TrackingService/GetTrackingStatus',
+            retail__pb2.GetTrackingStatusRequest.SerializeToString,
+            retail__pb2.GetTrackingStatusResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ClearTracking(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/retail.TrackingService/ClearTracking',
+            retail__pb2.Empty.SerializeToString,
+            retail__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+
+class OrderServiceStub(object):
+    """========================================
+    Order Service
+    ========================================
+    """
+
+    def __init__(self, channel):
+        """Constructor.
+
+        Args:
+            channel: A grpc.Channel.
+        """
+        self.CreateOrder = channel.unary_unary(
+                '/retail.OrderService/CreateOrder',
+                request_serializer=retail__pb2.CreateOrderRequest.SerializeToString,
+                response_deserializer=retail__pb2.CreateOrderResponse.FromString,
+                _registered_method=True)
+        self.GetOrderStatus = channel.unary_unary(
+                '/retail.OrderService/GetOrderStatus',
+                request_serializer=retail__pb2.GetOrderStatusRequest.SerializeToString,
+                response_deserializer=retail__pb2.GetOrderStatusResponse.FromString,
+                _registered_method=True)
+        self.ClearOrders = channel.unary_unary(
+                '/retail.OrderService/ClearOrders',
+                request_serializer=retail__pb2.Empty.SerializeToString,
+                response_deserializer=retail__pb2.Empty.FromString,
+                _registered_method=True)
+
+
+class OrderServiceServicer(object):
+    """========================================
+    Order Service
+    ========================================
+    """
+
+    def CreateOrder(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetOrderStatus(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ClearOrders(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+
+def add_OrderServiceServicer_to_server(servicer, server):
+    rpc_method_handlers = {
+            'CreateOrder': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateOrder,
+                    request_deserializer=retail__pb2.CreateOrderRequest.FromString,
+                    response_serializer=retail__pb2.CreateOrderResponse.SerializeToString,
+            ),
+            'GetOrderStatus': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetOrderStatus,
+                    request_deserializer=retail__pb2.GetOrderStatusRequest.FromString,
+                    response_serializer=retail__pb2.GetOrderStatusResponse.SerializeToString,
+            ),
+            'ClearOrders': grpc.unary_unary_rpc_method_handler(
+                    servicer.ClearOrders,
+                    request_deserializer=retail__pb2.Empty.FromString,
+                    response_serializer=retail__pb2.Empty.SerializeToString,
+            ),
+    }
+    generic_handler = grpc.method_handlers_generic_handler(
+            'retail.OrderService', rpc_method_handlers)
+    server.add_generic_rpc_handlers((generic_handler,))
+    server.add_registered_method_handlers('retail.OrderService', rpc_method_handlers)
+
+
+ # This class is part of an EXPERIMENTAL API.
+class OrderService(object):
+    """========================================
+    Order Service
+    ========================================
+    """
+
+    @staticmethod
+    def CreateOrder(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/retail.OrderService/CreateOrder',
+            retail__pb2.CreateOrderRequest.SerializeToString,
+            retail__pb2.CreateOrderResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetOrderStatus(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/retail.OrderService/GetOrderStatus',
+            retail__pb2.GetOrderStatusRequest.SerializeToString,
+            retail__pb2.GetOrderStatusResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ClearOrders(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/retail.OrderService/ClearOrders',
+            retail__pb2.Empty.SerializeToString,
+            retail__pb2.Empty.FromString,
             options,
             channel_credentials,
             insecure,
