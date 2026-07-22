@@ -21,6 +21,7 @@ REQ_QUEUE = "inventory_requests"
 RES_QUEUE = "inventory_responses"
 
 # Configure logging
+# This code was added by me for
 logging.basicConfig(level=logging.INFO)
 LOG = logging.getLogger("mas-async-call")
 

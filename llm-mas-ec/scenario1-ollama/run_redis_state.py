@@ -21,7 +21,7 @@ logging.basicConfig(
 
 process = psutil.Process(os.getpid())
 
-
+# This is for deployment
 class RedisStateStore:
     def __init__(self, host="localhost", port=6379, db=0):
         self.r = redis.Redis(host='', port=15385, db=0, password='')
